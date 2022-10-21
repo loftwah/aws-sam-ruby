@@ -1,4 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
 Description: 'aws-sam-ruby
 
   Sample SAM Template for aws-sam-ruby
@@ -7,6 +8,21 @@ Description: 'aws-sam-ruby
 Globals:
   Function:
     Timeout: 3
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://aws-sam-ruby/4db92e66f72c85d8b803c572880aedae
+      Handler: app.lambda_handler
+      Runtime: ruby2.7
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      SamResourceId: HelloWorldFunction
 Outputs:
   HelloWorldApi:
     Description: API Gateway endpoint URL for Prod stage for Hello World function
@@ -24,17 +40,3 @@ Outputs:
       Fn::GetAtt:
       - HelloWorldFunctionRole
       - Arn
-Resources:
-  HelloWorldFunction:
-    Properties:
-      CodeUri: s3://aws-sam--ruby/89fbf20842c011f4d43d46c320d8d41b
-      Events:
-        HelloWorld:
-          Properties:
-            Method: get
-            Path: /hello
-          Type: Api
-      Handler: app.lambda_handler
-      Runtime: ruby2.7
-    Type: AWS::Serverless::Function
-Transform: AWS::Serverless-2016-10-31

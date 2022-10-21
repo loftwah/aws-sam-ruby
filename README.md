@@ -19,7 +19,7 @@ This is a sample template for aws-sam-ruby - Below is a brief explanation of wha
 ## Requirements
 
 * AWS CLI already configured with at Administrator permission
-* [Ruby 2.5 installed](https://www.ruby-lang.org/en/documentation/installation/)
+* [Ruby 2.7 installed](https://www.ruby-lang.org/en/documentation/installation/)
 * [Docker installed](https://www.docker.com/community-edition)
 
 ## Setup process
@@ -68,7 +68,7 @@ AWS Lambda Ruby runtime requires a flat folder with all dependencies including t
 Firstly, we need a `S3 bucket` where we can upload our Lambda functions packaged as ZIP before we deploy anything - If you don't have a S3 bucket to store code artifacts then this is a good time to create one:
 
 ```bash
-aws s3 mb s3://BUCKET_NAME
+aws s3 mb s3://aws-sam-ruby
 ```
 
 Next, run the following command to package our Lambda function to S3:
@@ -76,7 +76,7 @@ Next, run the following command to package our Lambda function to S3:
 ```bash
 sam package \
     --output-template-file packaged.yaml \
-    --s3-bucket REPLACE_THIS_WITH_YOUR_S3_BUCKET_NAME
+    --s3-bucket aws-sam-ruby
 ```
 
 Next, the following command will create a Cloudformation Stack and deploy your SAM resources.

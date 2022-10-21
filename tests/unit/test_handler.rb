@@ -81,7 +81,7 @@ class HelloWorldTest < Test::Unit::TestCase
     {
       statusCode: 200,
       body: {
-        message: 'Hello World!',
+        message: 'This is a different way of doing it on Lambda!',
         location: '1.1.1.1'
       }.to_json
     }
