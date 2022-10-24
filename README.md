@@ -26,13 +26,13 @@ This is a sample template for aws-sam-ruby - Below is a brief explanation of wha
 
 ### Local development
 
-**Invoking function locally using a local sample payload**
+Invoking a function locally using a local sample payload
 
 ```bash
 sam local invoke HelloWorldFunction --event event.json
 ```
 
-**Invoking function locally through local API Gateway**
+Invoking a function locally through local API Gateway
 
 ```bash
 sam local start-api
