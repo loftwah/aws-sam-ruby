@@ -244,5 +244,6 @@ $RECYCLE.BIN/
 */build/*
 
 vendor/
+.bundle/
 
 # End of https://www.gitignore.io/api/osx,linux,python,windows,pycharm,visualstudiocode
