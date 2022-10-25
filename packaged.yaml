@@ -12,7 +12,7 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://aws-sam-ruby/4db92e66f72c85d8b803c572880aedae
+      CodeUri: s3://aws-sam-ruby/6e680f80774c6a96a20635f691768ba3
       Handler: app.lambda_handler
       Runtime: ruby2.7
       Events:
